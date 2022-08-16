@@ -36,7 +36,6 @@ new Vue({
                 allowEscapeKey: false,
             });
         },
-    
         indicarFracaso() {
             Swal.fire({
                     title: "Perdiste",
