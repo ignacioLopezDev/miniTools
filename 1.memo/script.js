@@ -47,5 +47,22 @@ new Vue({
                     allowEscapeKey: false,
                 })
                 .then(this.reiniciarJuego)
+        },
+        
+        indicarVictoria() {
+            Swal.fire({
+                    title: "¡Ganaste!",
+                    html: `
+                <img class="img-fluid" src="./img/ganaste.png" alt="Ganaste">
+                <p class="h4">Muy bien hecho</p>`,
+                    confirmButtonText: "Jugar de nuevo",
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                })
+                .then(this.reiniciarJuego)
+        },
+
+        haGanado() {
+            return this.memorama.every(arreglo => arreglo.every(imagen => imagen.acertada));
         }
     }})
